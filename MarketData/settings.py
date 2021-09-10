@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-n=p&tu18a6ru8@=@1^-)0%f&4%2_7ythhb)r5i2u+1xlzwoq&*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'MarketData.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_USER_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'data_app',
+        'USER': 'postgres',
+        'PASSWORD': 'Sup3rm@n',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 

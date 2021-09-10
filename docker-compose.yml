@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  python:
+    build: .
+    container_name: python
+    command: python manage.py runserver
+    volumes:
+      - .:/usr/src/app 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - pgdb
+    
+  pgdb:
+    image: postgres
+    container_name: pgdb
+    environment:
+      - POSTGRES_DB=data_app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Sup3rm@n 
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5433
